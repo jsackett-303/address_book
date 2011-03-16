@@ -1,5 +1,5 @@
 <table class="<%= resource.class.to_s.downcase %> detail">
-<% [:name, :address, :city, :state, :postal_code, :phone].each do |attr| %>
+<% attribute_syms.each do |attr| %>
   <tr>
     <th><%= attr.to_s.titleize %></th>
     <td><%= resource.attributes[attr.to_s] %></td>

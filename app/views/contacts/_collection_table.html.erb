@@ -1,0 +1,21 @@
+<table class="<%= collection.first.class.to_s.downcase.pluralize %> collection">
+  <thead>
+    <tr>
+    <% attribute_syms.each do |field| %>
+      <th><%= field.to_s.titleize %></th>
+    <% end %>
+    </tr>
+  </thead>
+  <tbody>
+  <% collection.each do |r| %>
+    <tr>
+    <% attribute_syms.each do |field| %>
+      <td><%= r.attributes[field.to_s] %></td>
+    <% end %>
+      <td><%= link_to "Show", resource_url(r) %></td>
+      <td><%= link_to "Edit", edit_resource_url(r) %></td>
+      <td><%= link_to "Destroy", resource_url(r), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

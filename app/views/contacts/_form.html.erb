@@ -14,7 +14,7 @@
     </td>
   </tr>
   <% end %>
-  <% [:name, :address, :city, :state, :postal_code, :phone].each do |field| %>
+  <% attribute_syms.each do |field| %>
     <tr>
       <td><%= field.to_s.titleize %></td>
       <td><%= f.text_field field %></td>
