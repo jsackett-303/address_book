@@ -14,11 +14,10 @@
     </td>
   </tr>
   <% end %>
-  <% resource.attributes.each_pair do |field, value| %>
-    <% next if ['id', 'created_at', 'updated_at'].include?(field) %>
+  <% [:name, :address, :city, :state, :postal_code, :phone].each do |field| %>
     <tr>
-      <td><%= field.titleize %></td>
-      <td><%= f.text_field field.to_sym %></td>
+      <td><%= field.to_s.titleize %></td>
+      <td><%= f.text_field field %></td>
     </tr>
   <% end %>
   <tr>
