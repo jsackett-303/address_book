@@ -32,3 +32,8 @@ gem 'inherited_resources_views'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+group :test do  
+  gem 'simplecov', '>=0.3.8', :require => false  
+end
+
