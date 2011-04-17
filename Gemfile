@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.5'
+gem 'rails', '3.0.6'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -33,7 +33,7 @@ gem 'inherited_resources_views'
 #   gem 'webrat'
 # end
 
-group :test do  
-  gem 'simplecov', '>=0.3.8', :require => false  
+group :test do
+  gem 'simplecov', '>=0.3.8', :require => false
 end
 
