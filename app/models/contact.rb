@@ -1,4 +1,10 @@
-class Contact < ActiveRecord::Base
-  validates_presence_of :name
-  validates_uniqueness_of :name
+class Contact < CassandraObject::Base
+  string :name
+  string :address
+  string :city
+  string :state
+  string :postal_code
+  string :phone
+
+  validates :name, presence: true
 end

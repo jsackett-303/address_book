@@ -29,6 +29,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'gotime-cassandra_object'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
