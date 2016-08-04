@@ -110,8 +110,8 @@ describe ContactsController do
         # specifies that the Contact created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Contact.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
-        put :update, {:id => contact.to_param, :contact => {'these' => 'params'}}, valid_session
+        Contact.any_instance.should_receive(:update).with({'name' => 'updated'})
+        put :update, {:id => contact.to_param, :contact => {'name' => 'updated'}}, valid_session
       end
 
       it "assigns the requested contact as @contact" do
