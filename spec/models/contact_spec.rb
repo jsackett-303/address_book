@@ -1,5 +1,8 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Contact do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'requires name attribute' do
+    expect(Contact.new).to_not be_valid
+    expect(Contact.new(name: 'foo')).to be_valid
+  end
 end

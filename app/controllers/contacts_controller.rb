@@ -29,9 +29,9 @@ class ContactsController < ApplicationController
     respond_to do |format|
       if @contact.save
         format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @contact }
+        format.json { render :show, status: :created, location: @contact }
       else
-        format.html { render action: 'new' }
+        format.html { render :new }
         format.json { render json: @contact.errors, status: :unprocessable_entity }
       end
     end
@@ -43,9 +43,9 @@ class ContactsController < ApplicationController
     respond_to do |format|
       if @contact.update(contact_params)
         format.html { redirect_to @contact, notice: 'Contact was successfully updated.' }
-        format.json { head :no_content }
+        format.json { render :show, status: :ok, location: @contact }
       else
-        format.html { render action: 'edit' }
+        format.html { render :edit }
         format.json { render json: @contact.errors, status: :unprocessable_entity }
       end
     end
@@ -56,7 +56,7 @@ class ContactsController < ApplicationController
   def destroy
     @contact.destroy
     respond_to do |format|
-      format.html { redirect_to contacts_url }
+      format.html { redirect_to contacts_url, notice: 'Contact was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.fetch(:contact).permit(:name, :address, :city, :state, :postal_code, :phone)
+      params.fetch(:contact, {}).permit(:address, :city, :name, :phone, :postal_code, :state)
     end
 end
